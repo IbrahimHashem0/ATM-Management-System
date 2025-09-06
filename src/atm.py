@@ -3,6 +3,7 @@ from tkinter import ttk, messagebox
 from transaction import TransactionHistory
 from db import get_connection
 
+
 class atm():
     def __init__(self, root):
         self.root = root
@@ -33,20 +34,29 @@ class atm():
         optFrame = tk.Frame(self.root, bd=5, relief="ridge", bg=self.clr(160, 200, 250))
         optFrame.place(width=self.width / 3, height=self.height - 180, x=70, y=100)
 
-        tk.Label(optFrame, text="Atm_Card:", bg=self.clr(160, 200, 250), font=("Arial", 15, "bold")).grid(row=0, column=0, padx=20, pady=30)
+        tk.Label(optFrame, text="Atm_Card:", bg=self.clr(160, 200, 250), font=("Arial", 15, "bold")).grid(row=0,
+                                                                                                          column=0,
+                                                                                                          padx=20,
+                                                                                                          pady=30)
         self.atm = tk.Entry(optFrame, width=20, font=("Arial", 15), bd=2)
         self.atm.grid(row=0, column=1, padx=10, pady=30)
 
-        tk.Label(optFrame, text="Password:", bg=self.clr(160, 200, 250), font=("Arial", 15, "bold")).grid(row=1, column=0, padx=20, pady=30)
+        tk.Label(optFrame, text="Password:", bg=self.clr(160, 200, 250), font=("Arial", 15, "bold")).grid(row=1,
+                                                                                                          column=0,
+                                                                                                          padx=20,
+                                                                                                          pady=30)
         self.pw = tk.Entry(optFrame, width=20, font=("Arial", 15), bd=2, show="*")
         self.pw.grid(row=1, column=1, padx=10, pady=30)
 
-        tk.Button(optFrame, command=self.inqFun, text="Balance Inquiry", width=15, bd=2, relief="raised", font=("Arial", 12, "bold")).grid(row=2, column=0, columnspan=2, pady=10)
-        tk.Button(optFrame, command=self.frameFun, text="Cash Withdraw", width=15, bd=2, relief="raised", font=("Arial", 12, "bold")).grid(row=3, column=0, columnspan=2, pady=10)
-        tk.Button(optFrame, command=self.transFrame, text="Transaction", width=15, bd=2, relief="raised", font=("Arial", 12, "bold")).grid(row=4, column=0, columnspan=2, pady=10)
-        tk.Button(optFrame, command=self.showHistory, text="Show History", width=15, bd=2, relief="raised", font=("Arial", 12, "bold")).grid(row=5, column=0, columnspan=2, pady=10)
+        tk.Button(optFrame, command=self.inqFun, text="Balance Inquiry", width=15, bd=2, relief="raised",
+                  font=("Arial", 12, "bold")).grid(row=2, column=0, columnspan=2, pady=10)
+        tk.Button(optFrame, command=self.frameFun, text="Cash Withdraw", width=15, bd=2, relief="raised",
+                  font=("Arial", 12, "bold")).grid(row=3, column=0, columnspan=2, pady=10)
+        tk.Button(optFrame, command=self.transFrame, text="Transaction", width=15, bd=2, relief="raised",
+                  font=("Arial", 12, "bold")).grid(row=4, column=0, columnspan=2, pady=10)
+        tk.Button(optFrame, command=self.showHistory, text="Show History", width=15, bd=2, relief="raised",
+                  font=("Arial", 12, "bold")).grid(row=5, column=0, columnspan=2, pady=10)
 
-    # ===== Table Function =====
     # ===== Table Function =====
     def tabFun(self, history_mode=False):
         if hasattr(self, 'table'):
@@ -59,7 +69,7 @@ class atm():
         y_scrol = tk.Scrollbar(tabFrame, orient="vertical")
         y_scrol.pack(side="right", fill="y")
 
-        if history_mode:  # وضع التاريخ
+        if history_mode:
             self.table = ttk.Treeview(tabFrame, xscrollcommand=x_scrol.set, yscrollcommand=y_scrol.set,
                                       columns=("acc", "action", "amount", "balance", "timestamp"))
             self.table.heading("acc", text="Account_No")
@@ -85,7 +95,7 @@ class atm():
         if not hist:
             messagebox.showinfo("History", "No transactions yet")
             return
-        self.tabFun(history_mode=True)  # نفتح الجدول بوضع التاريخ
+        self.tabFun(history_mode=True)
         self.table.delete(*self.table.get_children())
         for h in hist:
             self.table.insert('', tk.END, values=h)
@@ -131,7 +141,10 @@ class atm():
         self.amountFrame = tk.Frame(self.root, bd=4, relief="ridge", bg=self.clr(150, 240, 220))
         self.amountFrame.place(width=self.width / 3, height=250, x=self.width / 3 + 120, y=100)
 
-        tk.Label(self.amountFrame, text="Amount:", bg=self.clr(150, 240, 220), font=("Arial", 15, "bold")).grid(row=0, column=0, padx=20, pady=30)
+        tk.Label(self.amountFrame, text="Amount:", bg=self.clr(150, 240, 220), font=("Arial", 15, "bold")).grid(row=0,
+                                                                                                                column=0,
+                                                                                                                padx=20,
+                                                                                                                pady=30)
         self.wdIn = tk.Entry(self.amountFrame, width=20, bd=2, font=("Arial", 15))
         self.wdIn.grid(row=0, column=1, padx=10, pady=30)
 
@@ -189,11 +202,15 @@ class atm():
         self.transFrame = tk.Frame(self.root, bd=4, relief="ridge", bg=self.clr(150, 240, 220))
         self.transFrame.place(width=self.width / 3, height=350, x=self.width / 3 + 120, y=100)
 
-        tk.Label(self.transFrame, text="Amount:", bg=self.clr(150, 240, 220), font=("Arial", 15, "bold")).grid(row=0, column=0, padx=20, pady=30)
+        tk.Label(self.transFrame, text="Amount:", bg=self.clr(150, 240, 220), font=("Arial", 15, "bold")).grid(row=0,
+                                                                                                               column=0,
+                                                                                                               padx=20,
+                                                                                                               pady=30)
         self.transIn = tk.Entry(self.transFrame, width=20, bd=2, font=("Arial", 15))
         self.transIn.grid(row=0, column=1, padx=10, pady=30)
 
-        tk.Label(self.transFrame, text="Account_No:", bg=self.clr(150, 240, 220), font=("Arial", 15, "bold")).grid(row=1, column=0, padx=20, pady=30)
+        tk.Label(self.transFrame, text="Account_No:", bg=self.clr(150, 240, 220), font=("Arial", 15, "bold")).grid(
+            row=1, column=0, padx=20, pady=30)
         self.user2In = tk.Entry(self.transFrame, width=20, bd=2, font=("Arial", 15))
         self.user2In.grid(row=1, column=1, padx=10, pady=30)
 
@@ -260,7 +277,7 @@ class atm():
         if not hist:
             messagebox.showinfo("History", "No transactions yet")
             return
-        self.tabFun(history_mode=True)  # يجب فتح الجدول مع التاريخ
+        self.tabFun(history_mode=True)
         self.table.delete(*self.table.get_children())
         for h in hist:
             self.table.insert('', tk.END, values=h)
