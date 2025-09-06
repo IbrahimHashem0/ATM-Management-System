@@ -24,7 +24,7 @@ Numeric validation ensures only valid input is accepted.
 
 
 
-###### Balance Inquiry:
+##### Balance Inquiry:
 
 
 
@@ -36,7 +36,7 @@ Retrieves data from a MySQL database in real-time.
 
 
 
-###### Cash Withdrawal:
+##### Cash Withdrawal:
 
 
 
@@ -52,7 +52,7 @@ Records each withdrawal in the transaction history.
 
 
 
-###### Money Transfer:
+##### Money Transfer:
 
 
 
@@ -68,7 +68,7 @@ Updates sender and receiver balances atomically.
 
 
 
-###### Transaction History:
+##### Transaction History:
 
 
 
@@ -84,7 +84,7 @@ Displays all withdrawals and transfers chronologically in the GUI.
 
 
 
-###### GUI Interface:
+##### GUI Interface:
 
 
 
@@ -100,11 +100,11 @@ Color-coded frames for better user experience.
 
 
 
-#### Technical Highlights
+### Technical Highlights
 
 
 
-###### Data Structures \& Algorithms:
+##### Data Structures \& Algorithms:
 
 
 
@@ -120,7 +120,7 @@ Input validation ensures numeric values for ATM, password, and amount.
 
 
 
-###### Database Management:
+##### Database Management:
 
 
 
@@ -132,7 +132,7 @@ Supports real-time updates and retrieval with secure SQL queries.
 
 
 
-Object-Oriented Programming (OOP):
+##### Object-Oriented Programming (OOP):
 
 
 
@@ -144,7 +144,7 @@ Modular design allows easy extension for new features like deposit or bill payme
 
 
 
-###### User Interaction \& Safety:
+##### User Interaction \& Safety:
 
 
 
@@ -160,7 +160,7 @@ Displays meaningful error messages for invalid inputs or failed operations.
 
 
 
-#### Numbers \& Performance
+### Numbers \& Performance
 
 
 
@@ -180,7 +180,7 @@ Typical operations (balance check, withdrawal, transfer) execute in O(1) databas
 
 
 
-#### Future Improvements
+### Future Improvements
 
 
 
