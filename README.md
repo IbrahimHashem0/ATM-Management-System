@@ -100,6 +100,8 @@ Color-coded frames for better user experience.
 
 
 
+### 
+
 ### Technical Highlights
 
 
@@ -160,6 +162,8 @@ Displays meaningful error messages for invalid inputs or failed operations.
 
 
 
+### 
+
 ### Numbers \& Performance
 
 
@@ -179,6 +183,8 @@ GUI can display hundreds of rows of account or transaction data with smooth scro
 Typical operations (balance check, withdrawal, transfer) execute in O(1) database queries plus minor GUI rendering time.
 
 
+
+### 
 
 ### Future Improvements
 
