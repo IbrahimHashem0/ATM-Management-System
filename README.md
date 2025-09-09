@@ -1,7 +1,7 @@
-# ATM Management System
+# ATM Management System (Python)
 
 ## Overview
-This ATM Management System is a console-based C++ application designed to simulate a real-world ATM system.  
+This ATM Management System is a console-based Python application designed to simulate a real-world ATM system.  
 It allows users to manage accounts, perform transactions, and track transaction history efficiently using modular design and Object-Oriented Programming (OOP) principles.
 
 ## Features
@@ -9,34 +9,31 @@ It allows users to manage accounts, perform transactions, and track transaction 
 - **Balance Inquiry**: Check current account balance instantly.  
 - **Cash Withdrawal**: Withdraw cash with validation for sufficient balance.  
 - **Money Transfer**: Transfer funds to other accounts safely with confirmation prompts.  
-- **Transaction History**: Maintains a full history of withdrawals and transfers using a linked list.  
+- **Transaction History**: Maintains a full history of withdrawals and transfers using a linked list or Python list.  
 - **Input Validation**: Ensures numeric input for ATM number, password, and transaction amounts.  
 - **Optimized Data Handling**: 
-  - Accounts stored in `std::unordered_map` for O(1) lookup.  
-  - Transaction history managed with a linked list for efficient insertion and traversal.
+  - Accounts stored in Python `dict` for O(1) lookup.  
+  - Transaction history managed with `list` for efficient insertion and traversal.
 
 ## Technologies & Concepts Used
-- **Programming Language**: C++  
+- **Programming Language**: Python 3.x  
 - **OOP Principles**: Encapsulation, modularity  
 - **Data Structures & Algorithms**:  
-  - `std::unordered_map` for fast account lookup  
-  - Linked List for transaction history  
-  - `std::find`, `std::all_of` for validation  
-- **Build System**: CMake  
-- **IDE Tested On**: CLion
+  - `dict` for fast account lookup  
+  - `list` for transaction history  
+  - `any()`, `all()` for input validation  
+- **GUI (optional)**: Tkinter  
+- **IDE Tested On**: PyCharm, VSCode
 
 ## Installation
 1. Clone the repository:  
-`git clone https://github.com/IbrahimHashem0/ATM-Management-System.git`
+`git clone https://github.com/IbrahimHashem0/ATM-Management-System-Python.git`
 2. Navigate to the project folder:  
-`cd ATM-Management-System`
-3. Create a build directory and compile:  
-`mkdir build`  
-`cd build`  
-`cmake ..`  
-`cmake --build .`
+`cd ATM-Management-System-Python`
+3. Install dependencies (if GUI is used):  
+`pip install -r requirements.txt`
 4. Run the application:  
-`./ATM_Management_System`  *(On Windows: ATM_Management_System.exe)*
+`python atm_system.py`
 
 ## Usage
 Run the program and follow the console menu:
