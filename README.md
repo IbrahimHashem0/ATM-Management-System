@@ -1,66 +1,62 @@
 # ATM Management System
 
-###### ATM IH Bank is a desktop-based Python application with a GUI, designed to simulate a real-world ATM system. It allows users to manage accounts, perform transactions, and track transaction history efficiently.
+## Overview
+This ATM Management System is a console-based C++ application designed to simulate a real-world ATM system.  
+It allows users to manage accounts, perform transactions, and track transaction history efficiently using modular design and Object-Oriented Programming (OOP) principles.
 
 ## Features
+- **User Authentication**: Secure login using ATM card number and password with input validation.  
+- **Balance Inquiry**: Check current account balance instantly.  
+- **Cash Withdrawal**: Withdraw cash with validation for sufficient balance.  
+- **Money Transfer**: Transfer funds to other accounts safely with confirmation prompts.  
+- **Transaction History**: Maintains a full history of withdrawals and transfers using a linked list.  
+- **Input Validation**: Ensures numeric input for ATM number, password, and transaction amounts.  
+- **Optimized Data Handling**: 
+  - Accounts stored in `std::unordered_map` for O(1) lookup.  
+  - Transaction history managed with a linked list for efficient insertion and traversal.
 
-### User Authentication
-- Secure login using ATM card number and password.  
-- Numeric validation ensures only valid input is accepted.
+## Technologies & Concepts Used
+- **Programming Language**: C++  
+- **OOP Principles**: Encapsulation, modularity  
+- **Data Structures & Algorithms**:  
+  - `std::unordered_map` for fast account lookup  
+  - Linked List for transaction history  
+  - `std::find`, `std::all_of` for validation  
+- **Build System**: CMake  
+- **IDE Tested On**: CLion
 
-### Balance Inquiry
-- Check current account balance instantly.  
-- Retrieves data from a MySQL database in real-time.
+## Installation
+1. Clone the repository:  
+`git clone https://github.com/IbrahimHashem0/ATM-Management-System.git`
+2. Navigate to the project folder:  
+`cd ATM-Management-System`
+3. Create a build directory and compile:  
+`mkdir build`  
+`cd build`  
+`cmake ..`  
+`cmake --build .`
+4. Run the application:  
+`./ATM_Management_System`  *(On Windows: ATM_Management_System.exe)*
 
-### Cash Withdrawal
-- Withdraw cash in user-specified amounts.  
-- Validates sufficient balance before completing transactions.  
-- Records each withdrawal in the transaction history.
+## Usage
+Run the program and follow the console menu:
+- Login with ATM number and password
+- Check Balance
+- Withdraw Cash
+- Transfer Money
+- View Transaction History
+- Exit
 
-### Money Transfer
-- Transfer funds to other accounts using account numbers.  
-- Confirms transaction with a pop-up prompt before execution.  
-- Updates sender and receiver balances atomically.
-
-### Transaction History
-- Maintains a full history of transactions using a linked list.  
-- Shows date and time for each operation.  
-- Displays all withdrawals and transfers chronologically in the GUI.
-
-### GUI Interface
-- Interactive and responsive GUI using Tkinter.  
-- Scrollable tables for account details and transaction history.  
-- Color-coded frames for better user experience.
-
-## Technical Highlights
-
-### Data Structures & Algorithms
-- **Linked List**: Stores transaction history efficiently with O(1) insertion.  
-- **Tkinter Treeview**: Displays account and transaction data in tabular format.  
-- Input validation ensures numeric values for ATM, password, and amount.
-
-### Database Management
-- **MySQL**: Stores account information including ATM number, password, account number, and balance.  
-- Supports real-time updates and retrieval with secure SQL queries.
-
-### Object-Oriented Programming (OOP)
-- Encapsulated classes for ATM, Transaction History, and Transactions.  
-- Modular design allows easy extension for new features like deposit or bill payment.
-
-### User Interaction & Safety
-- Confirmation prompts before withdrawals and transfers.  
-- Prevents overdraft by validating balance before transactions.  
-- Displays meaningful error messages for invalid inputs or failed operations.
-
-## Numbers & Performance
-- Supports multiple accounts (limited only by database size).  
-- Transaction history stores an unlimited number of transactions using linked list.  
-- GUI can display hundreds of rows of account or transaction data with smooth scrolling.  
-- Typical operations (balance check, withdrawal, transfer) execute in O(1) database queries plus minor GUI rendering time.
+**Notes:**
+- All operations validate input and account balance.  
+- Transaction history records each withdrawal and transfer in chronological order.
 
 ## Future Improvements
 - Add deposit functionality.  
-- Integrate user registration and login with account creation.  
-- Enhance GUI with advanced themes and charts for spending analysis.  
-- Implement real-time multi-user concurrency for networked ATM operations.  
+- Integrate user registration with account creation.  
+- Enhance GUI with advanced features and themes.  
+- Implement multi-user concurrency for networked ATM operations.  
 - Support mobile app integration for remote account management.
+
+## License
+This project is open-source under the MIT License.
